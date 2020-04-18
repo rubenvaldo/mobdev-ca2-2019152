@@ -48,7 +48,7 @@ const routes: Routes = [
                 ]
             },
             {
-                path: 'deaths',
+                path: 'deaths', /* testing*/
                 children: [
                     {
                         path: '',
