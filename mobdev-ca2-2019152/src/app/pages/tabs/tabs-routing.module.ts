@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { TabPage } from './tab.page';
-
+import { TabsPage } from './tabs.page';
 const routes: Routes = [
     {
         path: 'tabs',
-        component: TabPage,
+        component: TabsPage,
         children: [
             {
                 path: 'episodes',
@@ -17,7 +15,7 @@ const routes: Routes = [
                     },
                     {
                         path: ':id',
-                        loadChildren: () => import('../episode-details/episode-deatils.module').then(m => m.EpisodeDeatilsPageModule)
+                        loadChildren: () => import('../episode-details/episode-details.module').then(m => m.EpisodeDetailsPageModule)
                     }
                 ]
             },
@@ -48,7 +46,7 @@ const routes: Routes = [
                 ]
             },
             {
-                path: 'deaths', /* testing*/
+                path: 'deaths',
                 children: [
                     {
                         path: '',
@@ -64,9 +62,8 @@ const routes: Routes = [
         pathMatch: 'full'
     }
 ];
-
 @NgModule({
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule],
 })
-export class TabPageRoutingModule { }
+export class TabsPageRoutingModule { }
