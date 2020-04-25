@@ -1,43 +1,39 @@
-import { FavouriteService } from '../../services/favourite.service';
+import { ApiService } from './../../services/api.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ApiService } from '../../services/api.service';
-
+import { FavouriteService } from 'src/app/services/favourite.service';
 @Component({
     selector: 'app-episode-details',
     templateUrl: './episode-details.page.html',
     styleUrls: ['./episode-details.page.scss'],
 })
 export class EpisodeDetailsPage implements OnInit {
-
     episode: any;
-    isFavourite = false;
+    isFavorite = false;
     episodeId = null;
-
     constructor(private activatedRoute: ActivatedRoute, private api: ApiService, private favouriteService: FavouriteService) { }
-
+ 
   ngOnInit() {
-
     this.episodeId = this.activatedRoute.snapshot.paramMap.get('id');
-
+ 
     this.api.getEpisode(this.episodeId).subscribe(res => {
-      this.episodeId = res;
+      this.episode = res;
     });
-
+ 
     this.favouriteService.isFavourite(this.episodeId).then(isFav => {
-      this.isFavourite = isFav;
+      this.isFavorite = isFav;
     });
   }
  
-  favouriteEpisode() {
+  favouriteFilm() {
     this.favouriteService.favouriteEpisode(this.episodeId).then(() => {
-      this.isFavourite = true;
+      this.isFavorite = true;
     });
   }
  
-  unfavouriteEpisode() {
+  unfavouriteFilm() {
     this.favouriteService.unfavouriteEpisode(this.episodeId).then(() => {
-      this.isFavourite = false;
+      this.isFavorite = false;
     });
   }
  
