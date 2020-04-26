@@ -15,7 +15,7 @@ export class FavouriteService {
 
     constructor(private storage: Storage, private storageChar: Storage) { }
 
-    //=============================CHARACTERS===============================
+    // CHARACTERS
 
     getAllFavouriteCharacters() {
         return this.storageChar.get(FAV_CHAR);
@@ -87,7 +87,7 @@ export class FavouriteService {
         this.removeFavouriteCharacter(characterId);
     }
 
-    //=============================EPISODES===============================
+    // EPISODES
 
     getAllFavouriteEpisodes() {
         return this.storage.get(FAV_EP);

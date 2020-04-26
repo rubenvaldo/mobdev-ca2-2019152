@@ -49,9 +49,8 @@ export class ApiService {
         return of(selectedQuotes);
     }
 
-
-    getDeaths() {
-        return this.http.get(`https://breakingbadapi.com/api/death-count?name=Gustavo+Fring`)
+    getDeathCount(name: String) {
+        return this.http.get(`https://breakingbadapi.com/api/death-count?name=${name}`)
     }
 
 
