@@ -1,3 +1,5 @@
+// Reference from : https://mikhail-cct.github.io/mobdev/wk7/#/12 
+
 import { FavouriteService } from '../../services/favourite.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -10,7 +12,7 @@ import { ApiService } from '../../services/api.service';
 export class EpisodeDetailsPage implements OnInit {
     episode: any;
     isFavourite = false;
-    isUnfavourite = false;
+    //isUnfavourite = false;
     episodeId = null;
     constructor(private activatedRoute: ActivatedRoute, private api: ApiService, private favouriteService: FavouriteService) { }
 

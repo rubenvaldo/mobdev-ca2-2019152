@@ -1,3 +1,5 @@
+// Reference from : https://mikhail-cct.github.io/mobdev/wk7/#/12 
+
 import { ApiService } from './../../services/api.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -11,9 +13,9 @@ import { FavouriteService } from 'src/app/services/favourite.service';
 export class CharacterDetailsPage implements OnInit {
 
     character: any;
-    isFavourite = false;
-    isUnfavourite = false;
+    isFavouriteChar = false;
     characterId = null;
+    //isUnfavourite = false;
 
      constructor(private activatedRoute: ActivatedRoute, private api: ApiService, private favouriteService: FavouriteService) { }
  
@@ -25,19 +27,19 @@ export class CharacterDetailsPage implements OnInit {
     });
  
     this.favouriteService.isFavourite(this.characterId).then(isFav => {
-      this.isFavourite = isFav;
+      this.isFavouriteChar = isFav;
     });
   }
  
   favouriteCharacter() {
     this.favouriteService.favouriteCharacter(this.characterId).then(() => {
-      this.isFavourite = true;
+      this.isFavouriteChar = true;
     });
   }
  
   unfavouriteCharacter() {
     this.favouriteService.unfavouriteCharacter(this.characterId).then(() => {
-      this.isFavourite = false;
+      this.isFavouriteChar = false;
     });
   }
  

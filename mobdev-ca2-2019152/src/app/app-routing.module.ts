@@ -1,3 +1,5 @@
+// Final Reference from : https://mikhail-cct.github.io/mobdev/wk3/#/11
+ 
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [{

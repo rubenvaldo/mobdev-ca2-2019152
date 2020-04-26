@@ -1,3 +1,5 @@
+// Final Reference from : https://mikhail-cct.github.io/mobdev/wk3/#/13
+ 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TabsPage } from './tabs.page';
