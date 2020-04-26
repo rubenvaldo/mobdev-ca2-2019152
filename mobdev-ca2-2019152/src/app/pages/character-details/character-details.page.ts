@@ -12,7 +12,7 @@ export class CharacterDetailsPage implements OnInit {
 
     character: any;
     isFavourite = false;
-    isUnfavorite = false;
+    isUnfavourite = false;
     characterId = null;
 
      constructor(private activatedRoute: ActivatedRoute, private api: ApiService, private favouriteService: FavouriteService) { }
@@ -35,7 +35,7 @@ export class CharacterDetailsPage implements OnInit {
     });
   }
  
-  unfavouriteFilm() {
+  unfavouriteCharacter() {
     this.favouriteService.unfavouriteCharacter(this.characterId).then(() => {
       this.isFavourite = false;
     });

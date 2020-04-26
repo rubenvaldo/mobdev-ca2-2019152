@@ -5,10 +5,10 @@
 		</ion-buttons>
 		<ion-title>{{ character?.name }}</ion-title>
 		<ion-buttons slot="end">
-				<ion-button (click)="unfavouritecharacter()" *ngIf="isFavorite">
+				<ion-button (click)="unfavouritecharacter()" *ngIf="isFavourite">
 				<ion-icon name="star" slot="icon-only"></ion-icon>
 			</ion-button>
-			<ion-button (click)="favouritecharacter" *ngIf="!isFavorite">
+			<ion-button (click)="favouritecharacter" *ngIf="!isFavourite">
 				<ion-icon name="star-outline" slot="icon-only"></ion-icon>
 			</ion-button>
 		</ion-buttons>
